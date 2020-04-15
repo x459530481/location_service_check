@@ -46,7 +46,8 @@ static FlutterMethodChannel* locationChannel;
     if (@available(iOS 10.0, *)) {
        url = [[NSURL alloc] initWithString:UIApplicationOpenSettingsURLString];
     } else {
-       url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+       //url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+        url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     }
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
